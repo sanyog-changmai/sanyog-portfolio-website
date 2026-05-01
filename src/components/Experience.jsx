@@ -26,8 +26,9 @@ const Experience = ({ experiences }) => {
 
   const formatDate = (dateString) => {
     if (!dateString) return 'Present';
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    // Google Sheets already returns formatted dates like "March 2023"
+    // Just return as-is to avoid cross-browser parsing issues
+    return dateString;
   };
 
   return (
